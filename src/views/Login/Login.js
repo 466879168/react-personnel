@@ -5,7 +5,7 @@ import { Form, Input, Button, Row, Col,message } from "antd";
 import { UserOutlined, LockOutlined, CodeOutlined ,PoweroffOutlined} from "@ant-design/icons";
 
 import { login,getCode } from "../../api/account";
-import {validatePassword} from "../../utils/validator"
+import {validatePassword} from "../../utils/validate"
 
 class LoginForm extends React.Component {
   constructor() {

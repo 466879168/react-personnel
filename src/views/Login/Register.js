@@ -83,11 +83,11 @@ class Register extends React.Component {
                 },
                 ({getFieldValue})=>({
                   validator(rule,value){
-                    if(value !== getFieldValue(password)){
-                      return Promise.reject("两次密码不一致")
-                    }else{
-                      return Promise.resolve()
-                    }
+                    // if(value !== getFieldValue(password)){
+                    //   return Promise.reject("两次密码不一致")
+                    // }else{
+                    //   return Promise.resolve()
+                    // }
                   }
                 })
               ]}

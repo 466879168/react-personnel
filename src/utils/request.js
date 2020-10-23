@@ -1,5 +1,6 @@
 import {configData} from "./apiConfig"
 import axios from 'axios';
+import Qs from 'qs'
 const BASE_FORNT="service"
 
 const service=axios.create({
@@ -15,7 +16,7 @@ service.interceptors.request.use(function(config){
     if(config.data &&config.data._NOCLEAR){
       if(config.data[key] === "" ||config.data[key] === undefined || config.data[key] === null){
         if (config.data._EMPTYITEM && config.data._EMPTYITEM.indexOf(key) !== -1) {
-          
+
         }else{
           delete config.data[key]
         }
