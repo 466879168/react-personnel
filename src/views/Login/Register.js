@@ -70,6 +70,7 @@ class Register extends React.Component {
               ]}
             >
               <Input
+                  type="password"
                 prefix={<LockOutlined className="site-form-item-icon" />}
                 placeholder="密码"
               />

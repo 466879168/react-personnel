@@ -1,11 +1,12 @@
 import React from "react";
 import "./index.less";
-
+import {withRouter} from 'react-router-dom'
 import { Form, Input, Button, Row, Col,message } from "antd";
 import { UserOutlined, LockOutlined, CodeOutlined ,PoweroffOutlined} from "@ant-design/icons";
 
 import { login,getCode } from "../../api/account";
 import {validatePassword} from "../../utils/validate"
+import {setToken} from "../../utils/session";
 
 class LoginForm extends React.Component {
   constructor() {
@@ -20,7 +21,12 @@ class LoginForm extends React.Component {
   //点击登录
   onFinish = (values) => {
     console.log("Finish:", values);
-    login().then((res) => {});
+    // login().then((res) => {});
+    //跳转路由
+    console.log(this.props)
+    let data="4556456456456456456456456"
+    setToken(data)
+    this.props.history.push("/")
   };
   toggleForm = () => {
     this.props.switchForm("register");
@@ -152,6 +158,7 @@ class LoginForm extends React.Component {
               ]}
             >
               <Input
+                  type="password"
                 prefix={<LockOutlined className="site-form-item-icon" />}
                 placeholder="密码"
               />
@@ -201,4 +208,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);
