@@ -36,58 +36,90 @@ class TableDemo extends Component {
       ]
     }
   }
-
+   //格式化价格
    formatPrice=(price)=>{
-     console.log(price)
      if (typeof price !== "number"){
       price = Number(price) || 0
      }
     return "￥"+price.toFixed(2)
   }
-
+  //获取总价格
   getTotalPrice=()=>{
     let totalPrice = 0
     for (let book of this.state.books){
       totalPrice+=book.count*book.price
     }
-    return "总价格"
+    return "总价格"+this.formatPrice(totalPrice)
+  }
+  //改变书籍的数量
+  changeItem=(index,counter)=>{
+    const books=[...this.state.books]
+    this.setState({
+      books:books.map((item,indey)=>{
+        if(indey === index){
+          item.count +=counter
+        }
+        return item
+      })
+    })
   }
 
-  render() {
-    const {books} =this.state
+  //移除书籍
+  removeItem=(index)=>{
+    const books=[...this.state.books]
+    this.setState({
+      books:books.filter((item,indey)=>index !== indey)
+    })
+  }
+  //空数据
+  renderEmpty=()=>{
+    return <h2>购物车为空</h2>
+  }
+  //有数据
+  renderBooks=()=>{
+    const {books}=this.state
     return (
         <div>
           <table>
             <thead>
-              <tr>
-                <th></th>
-                <th>书籍名称</th>
-                <th>出版日期</th>
-                <th>价格</th>
-                <th>购买数量</th>
-                <th>操作</th>
-              </tr>
+            <tr>
+              <th></th>
+              <th>书籍名称</th>
+              <th>出版日期</th>
+              <th>价格</th>
+              <th>购买数量</th>
+              <th>操作</th>
+            </tr>
             </thead>
             <tbody>
-              {books.map((item,index)=>{
-                return (
-                    <tr key={index}>
-                      <td>{index +1}</td>
-                      <td>{item.name}</td>
-                      <td>{item.date}</td>
-                      <td>{this.formatPrice(item.price)}</td>
-                      <td>
-                        <button>-</button>
-                        <span className="counter">{item.count}</span>
-                        <button>+</button>
-                      </td>
-                      <td><button>移除</button></td>
-                    </tr>
-                )
-              })}
+            {books.map((item,index)=>{
+              return (
+                  <tr key={index}>
+                    <td>{index +1}</td>
+                    <td>{item.name}</td>
+                    <td>{item.date}</td>
+                    <td>{this.formatPrice(item.price)}</td>
+                    <td>
+                      <button onClick={this.changeItem(index,-1)}>-</button>
+                      <span className="counter">{item.count}</span>
+                      <button onClick={this.changeItem(index,+1)}>+</button>
+                    </td>
+                    <td><button onClick={this.removeItem(index)}>移除</button></td>
+                  </tr>
+              )
+            })}
             </tbody>
           </table>
+          <h2>{this.getTotalPrice()}</h2>
         </div>
+    )
+  }
+
+  render() {
+    const {books} =this.state
+    console.log(books)
+    return (
+        books.length?this.renderBooks():this.renderEmpty()
     )
   }
 }

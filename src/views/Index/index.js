@@ -3,7 +3,7 @@ import "./index.less"
 import {Layout} from 'antd'
 import Aside from "./components/aside"
 import LayoutHeader from './components/header.js'
-
+import Container from '../../components/container/index'
 const {Header,Sider,Content} =Layout
 
 class Index extends React.Component {
@@ -21,7 +21,9 @@ class Index extends React.Component {
             <Sider width="250px">
               <Aside />
             </Sider>
-            <Content className="layout-main">main</Content>
+            <Content className="layout-main">
+              <Container />
+            </Content>
           </Layout>
         </Layout>
     )
