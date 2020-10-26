@@ -1,7 +1,7 @@
 import React ,{Component} from 'react'
 
-class User extends React.Component {
-  constructor(){
+class UserList extends Component {
+  constructor(props){
     super()
   }
 
@@ -14,4 +14,4 @@ class User extends React.Component {
   }
 }
 
-export default User
+export default UserList

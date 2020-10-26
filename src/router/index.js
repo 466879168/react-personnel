@@ -24,15 +24,15 @@ const Router=[
   {
     title:"部门管理",
     icon:"bars",
-    key:"/home/navigation",
+    key:"/index/navigation",
     child:[
       {
-        key:"/home/navigation/dropdown",
+        key:"/index/navigation/dropdown",
         title:"部门列表",
         icon:""
       },
       {
-        key:"/home/navigation/menu",
+        key:"/index/navigation/menu",
         title:"添加部门",
         icon:""
       }
@@ -41,12 +41,12 @@ const Router=[
   {
     title:"请假",
     icon:"info-circle-o",
-    key:"/home/reduce",
+    key:"/index/reduce",
   },
   {
     title:"加班",
     icon:"info-circle-o",
-    key:"/home/add",
+    key:"/index/add",
   },
 ]
 

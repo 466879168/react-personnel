@@ -1,7 +1,7 @@
 import React from 'react'
 
-class Add extends React.Component {
-  constructor() {
+class AddUser extends React.Component {
+  constructor(props) {
     super();
   }
 
@@ -11,3 +11,6 @@ class Add extends React.Component {
     )
   }
 }
+
+
+export default AddUser

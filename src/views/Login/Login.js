@@ -26,7 +26,7 @@ class LoginForm extends React.Component {
     console.log(this.props)
     let data="4556456456456456456456456"
     setToken(data)
-    this.props.history.push("/")
+    this.props.history.push("/index")
   };
   toggleForm = () => {
     this.props.switchForm("register");

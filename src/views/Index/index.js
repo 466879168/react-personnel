@@ -7,7 +7,7 @@ import Container from '../../components/container/index'
 const {Header,Sider,Content} =Layout
 
 class Index extends React.Component {
-  constructor(){
+  constructor(props){
     super()
   }
 
