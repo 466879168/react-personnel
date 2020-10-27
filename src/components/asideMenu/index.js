@@ -1,34 +1,43 @@
-import React ,{Component,Fragment} from 'react'
-import {Menu} from 'antd'
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
-import Router from "../../router/index"
+import React,{Component,Fragment} from 'react'
+
 import {Link} from 'react-router-dom'
-const {SubMenu}  =Menu
-class AsideMenu extends React.Component {
+import { UserOutlined } from '@ant-design/icons';
+import { Menu } from "antd";
+import Router from "../../router/index";
+const { SubMenu } = Menu;
+
+
+class AsideMenu extends Component {
   constructor(props){
-    super(props)
-    console.log(Router)
-  }
-  //处理无子集
-  renderMenu =(data)=>{
-    return (<Menu.Item key={data.key}>
-      <Link to={data.key}>
-        <span>{data.title}</span>
-      </Link>
-    </Menu.Item>)
-  }
-  //处理子集菜单
-  renderSubMenu=({title,key,child})=>{
-    return (<SubMenu key={key}  title={title}>
-      {
-        child&&child.map((item)=>{
-          return item.child && item.child.length>0?this.renderSubMenu(item):this.renderMenu(item)
-        })
-      }
-    </SubMenu>)
+    super(props);
+    this.state = {};
   }
 
-  render() {
+  // 生命周期，在这里多了一层接口请求，并过滤路由
+
+  // 无子级菜单处理
+  renderMenu = ({title, key}) => {
+    return (
+        <Menu.Item key={key}>
+          <Link to={key}><span>{title}</span></Link>
+        </Menu.Item>
+    )
+  }
+
+  // 子级菜单处理
+  renderSubMenu = ({title, key, child}) => {
+    return (
+        <SubMenu key={key} icon={<UserOutlined />} title={title}>
+          {
+            child && child.map(item => {
+              return item.child && item.child.length > 0 ? this.renderSubMenu(item) : this.renderMenu(item);
+            })
+          }
+        </SubMenu>
+    )
+  }
+
+  render(){
     return (
         <Fragment>
           <Menu
@@ -39,8 +48,8 @@ class AsideMenu extends React.Component {
               style={{ height: '100%', borderRight: 0 }}
           >
             {
-              Router && Router.map((firstItem,index)=>{
-                return firstItem.child && firstItem.child.length>0?this.renderSubMenu(firstItem):this.renderMenu(firstItem)
+              Router && Router.map(firstItem => {
+                return firstItem.child && firstItem.child.length > 0 ? this.renderSubMenu(firstItem) : this.renderMenu(firstItem);
               })
             }
           </Menu>
@@ -49,4 +58,4 @@ class AsideMenu extends React.Component {
   }
 }
 
-export default AsideMenu
+export default AsideMenu;

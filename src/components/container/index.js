@@ -1,10 +1,10 @@
 import React from 'react';
 
 import {BrowserRouter,Switch,Route} from 'react-router-dom'
-import User from '../../views/user/index'
-import UserAdd from '../../views/user/addUser'
+import User from '../../views/user'
+import UserAdd from '../../views/user/Add'
 
-import PrivateRouter from '../privatePouter/index'
+import PrivateRouter from '../privateRouter'
 
 
 

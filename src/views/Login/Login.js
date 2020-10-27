@@ -112,22 +112,6 @@ class LoginForm extends React.Component {
             <Form.Item
               className="item-input-name"
               name="username"
-              rules={[
-                {
-                  required: true,
-                  message: "请输入用户名!",
-                },
-                ({getFieldValue})=>({
-                  validator(rule,value){
-                    if(validatePassword(value)){
-                      return Promise.resolve()
-                      _this.setState({
-                        code_button_disabled:false
-                      })
-                    }
-                  }
-                })
-              ]}
             >
               <Input
                 prefix={<UserOutlined className="input-name" />}
@@ -138,24 +122,6 @@ class LoginForm extends React.Component {
             </Form.Item>
             <Form.Item
               name="password"
-              rules={[
-                {
-                  required: true,
-                  message: "请输入密码!",
-                },
-                {
-                  min: 6,
-                  message: "密码不能小于6位",
-                },
-                {
-                  max: 16,
-                  message: "密码不能大于16位",
-                },
-                {
-                  pattern: /^[0-9]*$/,
-                  message: "请输入数字",
-                },
-              ]}
             >
               <Input
                   type="password"
@@ -165,20 +131,6 @@ class LoginForm extends React.Component {
             </Form.Item>
             <Form.Item
               name="code"
-              rules={[
-                {
-                  required: true,
-                  message: "验证码不能为空",
-                },
-                // (getFieldValue) =>({
-                //   validator(rule,value){
-                //     if (!value||getFieldValue('password') === value){
-                //       return Promise.resolve()
-                //     }
-                //     return Promise.reject("错误了")
-                //   }
-                // })
-              ]}
             >
               <Row gutter={13}>
                 <Col className="gutter-row" span={14}>

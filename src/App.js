@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.less';
 import {BrowserRouter,Switch,Route} from 'react-router-dom'
-import Login from './views/Login/index'
-import TableDemo from "./views/tableDemo";
-import Index from "./views/Index"
-import PrivateRouter from "./components/privatePouter/index"
+
+
+import Login from './views/Login/Index'
+import TableDemo from "./views/tableDemo/index";
+import Index from "./views/Index/Index"
+import PrivateRouter from "./components/privateRouter/Index"
 
 
 class App extends React.Component{
@@ -17,9 +19,7 @@ class App extends React.Component{
         <BrowserRouter>
           <Switch>
             <Route exact path="/login" render={()=><Login />}/>
-            <Route exact path="/table" component={TableDemo}/>
-            <PrivateRouter exact path="/index" component={Index} />
-
+            <PrivateRouter path="/index" component={Index} />
           </Switch>
         </BrowserRouter>
     )
