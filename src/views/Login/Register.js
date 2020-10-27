@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.less";
 
-import { Form, Input, Button, Checkbox, Row, Col } from "antd";
+import { Form, Input, Button, Row, Col } from "antd";
 import { UserOutlined, LockOutlined, CodeOutlined } from "@ant-design/icons";
 
 class Register extends React.Component {

@@ -3,10 +3,9 @@ import './App.less';
 import {BrowserRouter,Switch,Route} from 'react-router-dom'
 
 
-import Login from './views/Login/Index'
-import TableDemo from "./views/tableDemo/index";
+import Login from './views/Login/index'
 import Index from "./views/Index/Index"
-import PrivateRouter from "./components/privateRouter/Index"
+import PrivateRouter from "./components/privateRouter/index"
 
 
 class App extends React.Component{

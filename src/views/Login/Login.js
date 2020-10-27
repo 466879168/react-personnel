@@ -2,10 +2,9 @@ import React from "react";
 import "./index.less";
 import {withRouter} from 'react-router-dom'
 import { Form, Input, Button, Row, Col,message } from "antd";
-import { UserOutlined, LockOutlined, CodeOutlined ,PoweroffOutlined} from "@ant-design/icons";
+import { UserOutlined, LockOutlined, CodeOutlined } from "@ant-design/icons";
 
-import { login,getCode } from "../../api/account";
-import {validatePassword} from "../../utils/validate"
+import { getCode } from "../../api/account";
 import {setToken} from "../../utils/session";
 
 class LoginForm extends React.Component {
@@ -93,7 +92,7 @@ class LoginForm extends React.Component {
 
 
   render() {
-    const _this=this
+    // const _this=this
     return (
       <div>
         <div className="form-header">

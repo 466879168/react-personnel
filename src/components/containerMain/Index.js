@@ -1,11 +1,11 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import {  Switch } from 'react-router-dom';
 // 组件
 import User from "../../views/user/Index";
 import UserAdd from "../../views/user/Add";
 // 私有路由组件
 // 私有组件方法
-import PrivateRouter from "../privateRouter/Index";
+import PrivateRouter from "../privateRouter/index";
 class ContainerMain extends React.Component {
   constructor(props){
     super(props);

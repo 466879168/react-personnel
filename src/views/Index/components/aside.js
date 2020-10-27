@@ -1,9 +1,9 @@
-import React ,{Component,Fragment} from 'react'
+import React ,{Fragment} from 'react'
 import './aside.less'
 import AsideMenu from "../../../components/asideMenu/index"
 class Aside extends React.Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
   }
 
   render() {
