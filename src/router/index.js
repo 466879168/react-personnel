@@ -24,15 +24,15 @@ const Router=[
   {
     title:"部门管理",
     icon:"bars",
-    key:"/index/navigation",
+    key:"/index/department",
     child:[
       {
-        key:"/index/navigation/dropdown",
+        key:"/index/department/list",
         title:"部门列表",
         icon:""
       },
       {
-        key:"/index/navigation/menu",
+        key:"/index/department/add",
         title:"添加部门",
         icon:""
       }

@@ -28,7 +28,6 @@ class Index extends Component {
         this.setState({
             collapsed
         })
-        console.log(this.state.collapsed)
         sessionStorage.setItem("collapsed",collapsed)
     }
 

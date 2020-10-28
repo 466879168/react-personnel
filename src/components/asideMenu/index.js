@@ -18,7 +18,6 @@ class AsideMenu extends Component {
 
   // 生命周期，在这里多了一层接口请求，并过滤路由
   componentDidMount(){
-    console.log(this.props)
     const pathname=this.props.location.pathname
     let menuKey=pathname.split("/").slice(0,3).join("/")
     this.selectMenuHigh(pathname,menuKey)
@@ -48,7 +47,6 @@ class AsideMenu extends Component {
 
   selectMenu=(item,key,keyPath,domEvent)=>{
     this.selectMenuHigh(item.key,item.keyPath[item.keyPath.length-1])
-    console.log(11111)
   }
 
   //处理菜单高光函数
@@ -61,7 +59,6 @@ class AsideMenu extends Component {
   }
 
   openMenu=(openKeys)=>{
-    console.log(1111)
     this.setState({
       openKeys:[openKeys[openKeys.length-1]]
     })

@@ -10,7 +10,6 @@ const service=axios.create({
 
 
 service.interceptors.request.use(function(config){
-  console.log(config)
   config.url=`${configData.apiUrl}/${BASE_FORNT}/${config.url}`
   for(let key in config.data){
     if(config.data &&config.data._NOCLEAR){

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-class User extends Component {
+class UserList extends Component {
   constructor(props){
     super(props);
     this.state = {};
@@ -12,4 +12,4 @@ class User extends Component {
     )
   }
 }
-export default User;
+export default UserList;
