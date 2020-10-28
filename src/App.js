@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.less';
-import {BrowserRouter,Switch,Route} from 'react-router-dom'
+import {BrowserRouter,Switch,Route,Redirect} from 'react-router-dom'
 
 
-import Login from './views/Login/index'
+import Login from './views/Login/Index'
 import Index from "./views/Index/Index"
-import PrivateRouter from "./components/privateRouter/index"
+import PrivateRouter from "./components/privateRouter/Index"
 
 
 class App extends React.Component{

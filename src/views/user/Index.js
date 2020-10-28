@@ -6,7 +6,9 @@ class User extends Component {
   }
   render(){
     return (
-        <div>用户列表666666666666666666666666666666666</div>
+        <div>
+          用户列表
+        </div>
     )
   }
 }

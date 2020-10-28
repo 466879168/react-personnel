@@ -9,6 +9,11 @@ class Aside extends React.Component {
   render() {
     return (
         <Fragment>
+          <h1 className="logo">
+            <span>
+              LOGO
+            </span>
+          </h1>
           <AsideMenu />
         </Fragment>
     )

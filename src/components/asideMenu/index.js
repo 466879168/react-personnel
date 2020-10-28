@@ -18,6 +18,7 @@ class AsideMenu extends Component {
 
   // 生命周期，在这里多了一层接口请求，并过滤路由
   componentDidMount(){
+    console.log(this.props)
     const pathname=this.props.location.pathname
     let menuKey=pathname.split("/").slice(0,3).join("/")
     this.selectMenuHigh(pathname,menuKey)

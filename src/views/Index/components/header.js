@@ -24,11 +24,6 @@ class LayoutHeader extends React.Component {
     const {collapsed} =this.state
     return (
         <div className={collapsed?" collapsed-close":""}>
-          <h1 className="logo">
-            <span>
-              LOGO
-            </span>
-          </h1>
           <div className="header-wrap">
             <span className="collapsed-icon" onClick={this.toggleMenu}>
               <MenuFoldOutlined />
