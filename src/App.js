@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.less';
-import {BrowserRouter,Switch,Route,Redirect} from 'react-router-dom'
+import {BrowserRouter,Switch,Route} from 'react-router-dom'
 
 
 import Login from './views/login/Index'

@@ -111,6 +111,7 @@ class LoginForm extends React.Component {
             <Form.Item
               className="item-input-name"
               name="username"
+              initialValue="466879168@qq.com"
             >
               <Input
                 prefix={<UserOutlined className="input-name" />}
@@ -121,6 +122,7 @@ class LoginForm extends React.Component {
             </Form.Item>
             <Form.Item
               name="password"
+              initialValue="123456"
             >
               <Input
                   type="password"
@@ -133,7 +135,7 @@ class LoginForm extends React.Component {
             >
               <Row gutter={13}>
                 <Col className="gutter-row" span={14}>
-                  <Input prefix={<CodeOutlined />} placeholder="验证码" />
+                  <Input value="123456" prefix={<CodeOutlined />} placeholder="验证码" />
                 </Col>
                 <Col className="gutter-row" span={10}>
                   <Button type="danger" block disabled={this.state.code_button_disabled} onClick={this.getCode} loading={this.state.code_button_loading}>
