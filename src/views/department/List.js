@@ -1,6 +1,7 @@
 import React,{Fragment} from 'react'
 
 import {Form, Input,Button,Table,Switch,message} from 'antd'
+import {Link} from 'react-router-dom'
 
 export default class DepartmentList extends React.Component {
   constructor(props){
